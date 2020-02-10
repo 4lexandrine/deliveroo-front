@@ -10,7 +10,7 @@ const Meals = ({ title, description, price, popular, picture }) => {
                 </div>
                 <div>
                     <span className="price">{price}€</span>
-                    <span className="popular">{popular && <span><i class="fas fa-star"></i>Populaire</span>}</span>
+                    <span className="popular">{popular && <span><i className="fas fa-star"></i>Populaire</span>}</span>
                 </div>
             </div>
             {picture ? <img src={picture} alt="" /> : ""}

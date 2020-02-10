@@ -7,7 +7,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
 }
 h1 {
   font-size: 32px;
@@ -37,27 +36,34 @@ p {
   width: 1200px;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
 }
 
 /* HEADER */
 header {
   background-color: #ffffff;
-  padding: 0 15px;
+  padding: 0 348px;
 }
-.header {
-  width: 1200px;
+header p {
+  padding-right: 40px;
 }
+
 .logo {
   width: 165px;
-  height: 42px;
+  height: 44px;
+  margin-top: 10px;
+  margin-left: 340px;
 }
 hr {
-  color: lightgray;
+  border: 1px solid lightgray;
+  width: 1900px;
 }
 
 .header-container {
   display: flex;
   align-items: center;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 header p {
@@ -147,6 +153,9 @@ header p {
   width: 90%;
   height: 50px;
   margin-top: 10px;
+  color: #8b9a9b;
+  font-weight: 700;
+  font-size: 16px;
 }
 .basket p {
   margin-bottom: 20px;

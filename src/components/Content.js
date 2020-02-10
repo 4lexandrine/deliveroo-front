@@ -7,7 +7,7 @@ const Content = ({ name, meals }) => {
             <h2>{meals.length > 0 && name}</h2>
             <div className="meal-container">
                 {meals.map((meal, index) => {
-                    return <Meals title={meal.title} description={meal.description} price={meal.price} picture={meal.picture} popular={meal.popular} />
+                    return <Meals key={index} title={meal.title} description={meal.description} price={meal.price} picture={meal.picture} popular={meal.popular} />
                 })}
             </div>
         </>

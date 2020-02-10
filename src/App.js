@@ -9,7 +9,6 @@ function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true)
 
-
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
@@ -28,10 +27,9 @@ function App() {
         <>
           <Header name={data.restaurant.name} description={data.restaurant.description} picture={data.restaurant.picture} />
           <div className="container">
-
             <div className="section">
               {data.categories.map((category, index) => {
-                return <Content name={category.name} meals={category.meals} />
+                return <Content key={index} name={category.name} meals={category.meals} />
               })}
             </div>
             <Basket />
@@ -43,4 +41,3 @@ function App() {
 }
 
 export default App;
-
