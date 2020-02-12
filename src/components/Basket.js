@@ -44,7 +44,8 @@ const Basket = ({ selectedMeals, setSelectedMeals, subTotal, setSubTotal }) => {
                                         setSelectedMeals(newSelectedMeals)
                                     }}>+</button></div>
                                 <div className="title">{selectedMeal.title}</div>
-                                <div className="price">{selectedMeal.price}</div>
+                                <div className="price">
+                                    {selectedMeal.price + " €"} </div>
 
                             </div>
                         )
@@ -54,16 +55,16 @@ const Basket = ({ selectedMeals, setSelectedMeals, subTotal, setSubTotal }) => {
                         <div className="subtotal-delivery">
                             <div className="sub-total">
                                 <p>Sous-total</p>
-                                <p>{Number(subTotal).toFixed(2)}</p>
+                                <p>{Number(subTotal).toFixed(2)} €</p>
                             </div>
                             <div className="delivery">
                                 <p>Frais de livraison</p>
-                                <p>{delivery}</p>
+                                <p>{delivery} €</p>
                             </div>
                         </div>
                         <div className="total">
                             <p>Total</p>
-                            <p>{Number(delivery + subTotal).toFixed(2)}</p>
+                            <p>{Number(delivery + subTotal).toFixed(2)} €</p>
                         </div>
                     </div>
                 </>

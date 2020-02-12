@@ -39,7 +39,6 @@ p {
   margin: 0 auto;
 }
 
-
 /* HEADER */
 
 header {
@@ -80,7 +79,6 @@ header p {
   border-radius: 5px;
   margin: 25px 0;
 }
-
 
 /* CONTENT */
 
@@ -124,7 +122,11 @@ header p {
   flex-direction: column;
   justify-content: space-between;
 }
-.price {
+.price-pop {
+  display: flex;
+  justify-content: flex-start;
+}
+.price-meal {
   font-size: 18px;
   color: #808484;
 }
@@ -178,6 +180,7 @@ header p {
   width: 100%;
   align-items: center;
   margin: 10px 0;
+  justify-content: space-between;
 }
 .basket-content > div {
   display: flex;
@@ -213,7 +216,10 @@ header p {
   justify-content: space-between;
 }
 .price {
-  width: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  left: 0;
 }
 .title {
   width: 150px;

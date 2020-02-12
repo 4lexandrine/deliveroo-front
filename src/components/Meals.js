@@ -24,8 +24,8 @@ const Meals = ({ title, description, price, popular, picture, selectedMeals, set
                     <h3>{title}</h3>
                     <p>{description.length > 60 ? description.slice(0, 60) + "..." : description}</p>
                 </div>
-                <div>
-                    <span className="price">{price}€</span>
+                <div className="price-pop">
+                    <span className="price-meal">{price} €</span>
                     <span className="popular">{popular && <span><i className="fas fa-star"></i>Populaire</span>}</span>
                 </div>
             </div>
