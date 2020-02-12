@@ -1,13 +1,14 @@
 import React from "react";
 import Meals from "./Meals";
 
-const Content = ({ name, meals }) => {
+const Content = ({ name, meals, selectedMeals, setSelectedMeals, subTotal, setSubTotal }) => {
     return (
         <>
-            <h2>{meals.length > 0 && name}</h2>
+            {meals.length > 0 &&
+                <h2>{name}</h2>}
             <div className="meal-container">
                 {meals.map((meal, index) => {
-                    return <Meals key={index} title={meal.title} description={meal.description} price={meal.price} picture={meal.picture} popular={meal.popular} />
+                    return <Meals key={index} {...meal} selectedMeals={selectedMeals} setSelectedMeals={setSelectedMeals} subTotal={subTotal} setSubTotal={setSubTotal} />
                 })}
             </div>
         </>

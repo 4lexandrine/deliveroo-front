@@ -39,7 +39,9 @@ p {
   margin: 0 auto;
 }
 
+
 /* HEADER */
+
 header {
   background-color: #ffffff;
 }
@@ -79,7 +81,9 @@ header p {
   margin: 25px 0;
 }
 
+
 /* CONTENT */
+
 .meal-container {
   display: flex;
   flex-wrap: wrap;
@@ -135,37 +139,90 @@ header p {
 .section {
   width: 70%;
 }
+
 /* BASKET */
 
 .basket {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   margin-top: 60px;
   width: 25%;
-  height: 190px;
+  height: 100%;
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
   margin-bottom: 50px;
+  padding: 0 10px;
   position: -webkit-sticky;
-
   position: sticky;
   top: 30px;
 }
 
-.basket button {
+.basket .valider {
   border: none;
   border-radius: 5px;
   background-color: #bac3c3;
   width: 90%;
   height: 50px;
-  margin-top: 10px;
+  margin: 10px 0;
   color: #8b9a9b;
   font-weight: 700;
   font-size: 16px;
 }
 .basket p {
   margin-bottom: 20px;
+}
+.basket-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin: 10px 0;
+}
+.basket-content > div {
+  display: flex;
+  /* width: 100px; */
+}
+.basket-content button {
+  width: 20px;
+  height: 20px;
+}
+.addition-container {
+  width: 100%;
+}
+.sub-total,
+.total {
+  border-top: 1px solid lightgray;
+  padding-top: 10px;
+}
+.quantity {
+  margin: 0 10px;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+}
+.subtotal-delivery {
+  width: 100%;
+}
+
+.sub-total,
+.delivery {
+  display: flex;
+  justify-content: space-between;
+}
+.price {
+  width: 50px;
+}
+.title {
+  width: 150px;
+}
+.container-quantity {
+  width: 80px;
+}
+.title,
+.price,
+.container-quantity {
+  margin: 0 auto;
 }

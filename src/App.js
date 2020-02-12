@@ -8,6 +8,8 @@ import Basket from "./components/Basket"
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true)
+  const [selectedMeals, setSelectedMeals] = useState([]);
+  const [subTotal, setSubTotal] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,14 +27,14 @@ function App() {
     <>
       {isLoading ? <p>Loading...</p> :
         <>
-          <Header name={data.restaurant.name} description={data.restaurant.description} picture={data.restaurant.picture} />
+          <Header {...data.restaurant} />
           <div className="container">
             <div className="section">
               {data.categories.map((category, index) => {
-                return <Content key={index} name={category.name} meals={category.meals} />
+                return <Content key={index} name={category.name} meals={category.meals} selectedMeals={selectedMeals} setSelectedMeals={setSelectedMeals}  subTotal={subTotal} setSubTotal={setSubTotal} />
               })}
             </div>
-            <Basket />
+            <Basket selectedMeals={selectedMeals} setSelectedMeals={setSelectedMeals} subTotal={subTotal} setSubTotal={setSubTotal} />
           </div>
         </>
       }
