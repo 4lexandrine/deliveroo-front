@@ -4,7 +4,7 @@ const Basket = ({ selectedMeals, setSelectedMeals, subTotal, setSubTotal }) => {
     const delivery = 2.5;
     return (
         <div className="basket">
-            <button className="valider">Valider mon panier</button>
+            <button className={selectedMeals.length === 0 ? "valider" : "valider ok"}>Valider mon panier</button>
             {selectedMeals.length === 0 ?
                 <div>
                     <p>Votre panier est vide</p>
@@ -15,7 +15,7 @@ const Basket = ({ selectedMeals, setSelectedMeals, subTotal, setSubTotal }) => {
                         return (
                             <div key={index} className="basket-content">
                                 <div className="container-quantity">
-                                    <button onClick={() => {
+                                    <i onClick={() => {
                                         const newSelectedMeals = [...selectedMeals]
                                         let price = newSelectedMeals[index].price
                                         subTotal = Number(subTotal) - Number(price);
@@ -30,19 +30,17 @@ const Basket = ({ selectedMeals, setSelectedMeals, subTotal, setSubTotal }) => {
                                         }
 
                                         setSelectedMeals(newSelectedMeals)
-                                    }} >-</button>
+                                    }} className="fas fa-minus-circle icon"></i>
                                     <span className="quantity">{selectedMeal.quantity}</span>
-                                    <button onClick={() => {
+                                    <i onClick={() => {
                                         const newSelectedMeals = [...selectedMeals]
                                         newSelectedMeals[index].quantity++
                                         let price = newSelectedMeals[index].price
                                         subTotal = Number(subTotal) + Number(price);
-
                                         // console.log(quantity, price, subTotal);
-
                                         setSubTotal(subTotal)
                                         setSelectedMeals(newSelectedMeals)
-                                    }}>+</button></div>
+                                    }} className="fas fa-plus-circle icon"></i></div>
                                 <div className="title">{selectedMeal.title}</div>
                                 <div className="price">
                                     {selectedMeal.price + " €"} </div>

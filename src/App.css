@@ -172,6 +172,10 @@ header p {
   font-weight: 700;
   font-size: 16px;
 }
+.basket .ok {
+  background-color: #1fd2c4;
+  color: white;
+}
 .basket p {
   margin-bottom: 20px;
 }
@@ -231,4 +235,7 @@ header p {
 .price,
 .container-quantity {
   margin: 0 auto;
+}
+.icon {
+  color: #1fd2c4;
 }

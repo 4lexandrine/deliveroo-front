@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import Header from "./components/Header";
-import Content from "./components/Content";
+import Content from "./containers/Content";
 import Basket from "./components/Basket"
 
 function App() {
@@ -19,7 +19,6 @@ function App() {
       setData(response.data);
       setIsLoading(false);
     };
-
     fetchData();
   }, []);
 
@@ -31,10 +30,20 @@ function App() {
           <div className="container">
             <div className="section">
               {data.categories.map((category, index) => {
-                return <Content key={index} name={category.name} meals={category.meals} selectedMeals={selectedMeals} setSelectedMeals={setSelectedMeals}  subTotal={subTotal} setSubTotal={setSubTotal} />
+                return <Content
+                  key={index}
+                  {...category}
+                  selectedMeals={selectedMeals}
+                  setSelectedMeals={setSelectedMeals}
+                  subTotal={subTotal}
+                  setSubTotal={setSubTotal} />
               })}
             </div>
-            <Basket selectedMeals={selectedMeals} setSelectedMeals={setSelectedMeals} subTotal={subTotal} setSubTotal={setSubTotal} />
+            <Basket
+              selectedMeals={selectedMeals}
+              setSelectedMeals={setSelectedMeals}
+              subTotal={subTotal}
+              setSubTotal={setSubTotal} />
           </div>
         </>
       }
